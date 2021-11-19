@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>WDD 330 Joseph Devincenzi</title>
+    <title>CSE 111 - Contents</title>
     <link rel="icon" type="image/png" href="site/icon.png">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="site/style.css">
     <style>
         tbody > tr > th {
             font-weight: bold;
@@ -20,6 +20,9 @@
     </style>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+    <script src="site/url.js"></script>
+    <script src="site/urlWrite.js"></script>
+    <script src="site/color.js"></script>
 </head>
 
 <body>
@@ -29,35 +32,57 @@
         <div>BYU</div>
         <div>Idaho</div>
     </a>
-    <h2><a href="https://byui.instructure.com">WDD 330</a> |
-        <a href="index.html">Frontend Web Development II</a></h2>
+    <h2><a href="https://byui.instructure.com">CSE 111</a> |
+        <a href="index.html">Programming with Functions</a></h2>
 </header>
 <article>
-    <h1>Portfolio Joseph Devincenzi</h1>
-    <p>This is a repository of the activities and notes of Joseph Devincenzi
-        from the WDD 330 class. Fall Semester 2021 at BYU-I
-    </p>
+    <h1>Contents</h1>
+    <p>This is an unofficial listing of the course content for
+    CSE&nbsp;111 Programming with Functions. Please see I-Learn for the
+    official list of materials, including quizzes and due dates.</p>
 
     <table><thead>
-        <tr><th>Items</th>
-            <th></th>
-            <th>Description</th>
-            </tr>
+        <tr><th>Lesson</th>
+            <th>Domain Topics</th>
+            <th>Computing Topics</th>
+            <th>Program</th></tr>
     </thead><tbody>
-        <tr><th colspan="4">Helpful Class Materials</th></tr>
-        <tr><td colspan="4"><a href="https://eloquentjavascript.net/">Eloquent JavaScript</a></td>
-        <tr><td colspan="4"><a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition">Javascript Novice to Ninja 2nd Edition</a></td>
-        <tr><td colspan="4"><a href="https://exploringjs.com/es6/index.html#toc_ch_overviews">Exploring ES6</a></td></tr>
+        <tr><th colspan="4">Overview</th></tr>
+        <tr><td colspan="4"><a href="overview/syllabus.html">Syllabus</a></td></tr>
 
-        <tr><th colspan="4">Week 01 - Setting things Up</th></tr>
-        <tr><td><a href="week01/notes.html">Notes</a></td></tr>
-
-        <tr><td><a href="https://github.com/jdevi9/wdd330">GitHub repository page</a></td>
+        <tr><th colspan="4">Lesson 1 - Getting Started</th></tr>
+        <tr><td><a href="lesson01/dev_env.html">Development environment</a></td>
             <td></td>
-            <td>place to find all the code directly throughout</td></tr>
+            <td></td>
+            <td><a class="solution" href="lesson01/sample.py">sample</a></td></tr>
 
-        <tr><th colspan="4">Week 02 - Programming Basics, Arrays and Functions</th></tr>
-        <tr><td><a href="week02/notes.html">Notes</a></td></tr>
+        <tr><td><a href="lesson01/prepare.html">Prepare</a></td>
+            <td></td>
+            <td>input, data types, arithmetic, f-strings, print, if, logic</td>
+            <td><a class="solution" href="lesson01/data_types_demo.py">data_types</a></td></tr>
+
+        <tr><td><a href="lesson01/check.html">Prepare: Checkpoint</a></td>
+            <td>exercise heart rates</td>
+            <td>input, int, arithmetic, f-strings, print</td>
+            <td><a class="solution" href="lesson01/check_solution.py">check</a></td></tr>
+
+        <tr><td><a href="lesson01/teach.html">Teach: Class Activity</a><br>
+            (for campus sections)</td>
+            <td>pendulum</td>
+            <td>input, float, arithmetic, f-strings, print</td>
+            <td><a class="solution" href="lesson01/teach_solution.py">teach</a></td></tr>
+
+        <tr><td><a href="lesson01/prove.html">Prove: Milestone</a></td>
+            <td>tire volume</td>
+            <td>input, float, arithmetic, f-strings, print</td>
+            <td><a href="overview/prove.html">prove</a></td></tr>
+
+        <tr><th colspan="4">Lesson 2 - Calling Functions</th></tr>
+        <tr><td><a href="lesson02/prepare.html">Prepare</a></td>
+            <td></td>
+            <td>calling built-in functions, functions in standard
+            modules, and methods; named arguments.</td>
+            <td></td></tr>
 
         <tr><td><a href="lesson02/check.html">Prepare: Checkpoint</a></td>
             <td>items per box</td>
@@ -281,6 +306,43 @@
         <tr><td><a href="lesson11/prove.html">Prove: Milestone</a></td>
             <td colspan="2">student chosen Python program</td>
             <td></td></tr>
+
+        <tr><th colspan="4">Lesson 12 - Using Objects</th></tr>
+        <tr><td><a href="lesson12/prepare.html">Prepare</a></td>
+            <td></td>
+            <td>creating an object, dot operator, attributes, methods,
+            lists and dictionaries as objects</td>
+            <td></td></tr>
+
+        <tr><td><a href="lesson12/check.html">Prepare: Checkpoint</a></td>
+            <td>fruit</td>
+            <td>modify a list using object oriented programming</td>
+            <td><a class="solution" href="lesson12/check_solution.py">check</a></td></tr>
+
+        <tr><td><a href="lesson12/teach.html">Teach: Team Activity</a></td>
+            <td>GUI</td>
+            <td>creating objects, accessing attributes, calling
+                methods</td>
+            <td><a class="solution" href="lesson12/heart_rate.py">heart_rate</a>
+                <a class="solution" href="lesson12/teach_solution.py">teach</a></td></tr>
+
+        <tr><td><a href="lesson12/prove.html">Prove: Milestone</a></td>
+            <td colspan="2">student chosen Python program</td>
+            <td></td></tr>
+
+        <tr><th colspan="4">Lesson 13 - Significant Program</th></tr>
+
+        <tr><td colspan="3">No prepare content, checkpoint, or team
+                activity. Students work on their own significant Python
+                program.</td>
+            <td></td></tr>
+
+        <tr><td><a href="lesson13/prove.html">Prove: Assignment</a></td>
+            <td colspan="2">student chosen Python program</td>
+            <td></td></tr>
+
+        <tr><th colspan="4">Lesson 14 - Conclusion</th></tr>
+        <tr><td colspan="4"><a href="lesson14/prepare.html">Prepare</a></td></tr>
     </tbody></table>
 </article>
 <footer>
