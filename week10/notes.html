@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!-- Copyright 2020, Brigham Young University - Idaho. All rights reserved. -->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,114 +17,239 @@
     <link rel="icon" type="image/png" href="../site/icon.png">
     <link rel="stylesheet" type="text/css" href="../style.css">
     <link rel="stylesheet" type="text/css" href="../site/hljs/vscode.css">
+    <style>
+        form {
+            font: 1em sans-serif;
+            max-width: 320px;
+        }
+
+        p>label {
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        textarea,
+        fieldset {
+            width: 100%;
+            border: 1px solid #333;
+            box-sizing: border-box;
+        }
+
+        input:invalid {
+            box-shadow: 0 0 5px 1px red;
+        }
+
+        input:focus:invalid {
+            box-shadow: none;
+        }
+    </style>
 </head>
 
 <body>
-<header>
-    <div class="colorCtrl">&nbsp;</div>
-    <a class="logo" href="https://www.byui.edu">
-        <div>BYU</div>
-        <div>Idaho</div>
-    </a>
-    <h2><a href="https://byui.instructure.com">WDD 330</a> |
-        <a href="../index.html">Web Frontend Development II</a></h2>
-</header>
-<article>
-    <h1>Client-side form validation</h1>
+    <header>
+        <div class="colorCtrl">&nbsp;</div>
+        <a class="logo" href="https://www.byui.edu">
+            <div>BYU</div>
+            <div>Idaho</div>
+        </a>
+        <h2><a href="https://byui.instructure.com">WDD 330</a> |
+            <a href="../index.html">Web Frontend Development II</a>
+        </h2>
+    </header>
+    <article>
+        <h1>Week 10 Notes</h1>
+        <h1>Client-side form validation</h1>
 
-    <h2>What is form validation?</h2>
-    <p>When you enter data in an input and the browser checks to see if
-        what you put follows the rules that have been set.
-    </p>
-    <p>This include the length of passwords, have a valid email, format of phone number, etc.</p>
-    
-    <h2>Different Types of client-side validation</h2>
-    <ul>
-        <li>Built-in form validation</li>
-        <p>Better performance that JavaScript, uses primarily HTML 5. 
-            Not as flexible as JavaScript though.
+        <h2>What is form validation?</h2>
+        <p>When you enter data in an input and the browser checks to see if
+            what you put follows the rules that have been set.
         </p>
-        <li>JavaScript</li>
-        <p>Using JavaScript to validate, completely customizable.</p>
-    </ul>
+        <p>This include the length of passwords, have a valid email, format of phone number, etc.</p>
 
-    <h2>Assignment</h2>
-    <p>Write a Python program named <code>heart_rate.py</code> that asks
-    for a person's age and computes and outputs the slowest and fastest
-    rates necessary to strengthen his heart. To start your program, copy
-    and paste the following code into your program and use it as an
-    outline as you write code. Note that in a Python program, a triple
-    quoted string at the top of the file acts as a comment for the
-    entire program.</p>
+        <h2>Different Types of client-side validation</h2>
+        <ul>
+            <li>Built-in form validation</li>
+            <p>Better performance that JavaScript, uses primarily HTML 5.
+                Not as flexible as JavaScript though.
+            </p>
+            <li>JavaScript</li>
+            <p>Using JavaScript to validate, completely customizable.</p>
+        </ul>
 
-<div class="pre"><pre class="python">"""
-When you physically exercise to strengthen your heart, you
-should maintain your heart rate within a range for at least 20
-minutes. To find that range, subtract your age from 220. This
-difference is your maximum heart rate per minute. Your heart
-simply will not beat faster than this maximum (220 - age).
-When exercising to strengthen your heart, you should keep your
-heart rate between 65% and 85% of your heart's maximum.
-"""</pre></div>
+        <h2>Example</h2>
+        <p>This is a simple form that has a required attribute to indicate it's needed.
+            Using only HTML and CSS we can validate the input.
+        </p>
+        <form>
+            <label for="choose">Would you prefer a banana or cherry?</label>
+            <input id="choose" name="i_like" required>
+            <button>Submit</button>
+        </form>
 
-    <h2>Helpful Documentation</h2>
-    <p>The <a href="prepare.html">prepare content</a> for this lesson
-    explains how to write code to do the following:</p>
 
-    <ul>
-        <li><div><a href="prepare.html#input">Get input</a> from a
-        user</div></li>
-        <li><div><a href="prepare.html#data_types">Convert</a> user
-        input from a string to a number</div></li>
-        <li><div><a href="prepare.html#arith">Calculate</a>
-        results</div></li>
-        <li><div><a href="prepare.html#print">Display</a> results to the
-        user</div></li>
-    </ul>
+        <div class="pre">
+            <pre class="python">
+Note: make sure to indicate when form fields are required. You can use an *. 
+This is required by the WCAG accessibitliy guidelines. Only ask for information
+that is actually needed. </pre>
+        </div>
 
-    <h2>Testing Procedure</h2>
-    <p>Verify that your program works correctly by following each
-    step in this testing procedure:</p>
-    <ol class="test long">
-        <li><div>Run your program and enter the input shown below.
-        Ensure that your program's output matches the output below.
-<pre class="console">&gt; python heart_rate.py
-Please enter your age: <span class="input">23</span>
-When you exercise to strengthen your heart, you should
-keep your heart rate between 128 and 167 beats per minute.</pre>
-        </div></li>
+        <h2>Validating against a regular expression</h2>
+        <p>You can use the "pattern" attribute which waits for a "Regular Expression" as the value
+            A regex matches character combinations.
+        </p>
+        <p>Some examples of regex:</p>
+        <ul>
+            <li>a — Matches one character that is a (not b, not aa, and so on)</li>
+            <li>abc — Matches a, followed by b, followed by c.</li>
+            <li>ab?c—Matches a, optionally followed by a single b, followed by c. ( ac or abc)</li>
+            <li>ab*c—Matches a, optionally followed by any number of bs, followed by c. ( ac , abc, abbbbbc, and so on).
+            </li>
+            <li>a|b — Matches one character that is a or b.</li>
+            <li>abc|xyz — Matches exactly abc or exactly xyz (but not abcxyz or a or y, and so on).</li>
+        </ul>
 
-        <li><div>Run your program using your age or the age of one
-        of your parents. Use a calculator to ensure that the output
-        is correct.</div></li>
-    </ol>
+        <h2>Example with validation, no JavaScript</h2>
+        <p>Contains examples of constraining lengths and values.</p>
+        <p>To limit length you use "minlength" and "maxlength" in the input line.</p>
 
-    <h2>Sample Solution</h2>
-    <p>When your program is finished, view the <a class="solution"
-    href="check_solution.py">sample solution</a> for this assignment to
-    compare your solution to that one. Before looking at the sample
-    solution, you should work to complete this checkpoint program.
-    However, if you have worked on it for at least an hour and are still
-    having problems, feel free to use the sample solution to help you
-    finish your program.</p>
+        <form>
+            <p>
+            <fieldset>
+                <legend>Do you have a driver's license?<abbr title="This field is mandatory"
+                        aria-label="required">*</abbr></legend>
+                <input type="radio" required name="driver" id="r1" value="yes"><label for="r1">Yes</label>
+                <input type="radio" required name="driver" id="r2" value="no"><label for="r2">No</label>
+            </fieldset>
+            </p>
+            <p>
+                <label for="n1">How old are you?</label>
+                <input type="number" min="12" max="120" step="1" id="n1" name="age" pattern="\d+">
+            </p>
+            <p>
+                <label for="t1">What's your favorite fruit?<abbr title="This field is mandatory"
+                        aria-label="required">*</abbr></label>
+                <input type="text" id="t1" name="fruit" list="l1" required
+                    pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range">
+                <datalist id="l1">
+                    <option>Banana</option>
+                    <option>Cherry</option>
+                    <option>Apple</option>
+                    <option>Strawberry</option>
+                    <option>Lemon</option>
+                    <option>Orange</option>
+                </datalist>
+            </p>
+            <p>
+                <label for="t2">What's your e-mail address?</label>
+                <input type="email" id="t2" name="email">
+            </p>
+            <p>
+                <label for="t3">Leave a short message</label>
+                <textarea id="t3" name="msg" maxlength="140" rows="5"></textarea>
+            </p>
+            <p>
+                <button>Submit</button>
+            </p>
+        </form>
+        <h2>Simple JavaScript validation</h2>
+        <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+            Name: <input type="text" name="fname">
+            <input type="submit" value="Submit">
+        </form>
 
-    <h2>Ponder</h2>
-    <p>During this assignment, you wrote a Python program that gets
-    input from a user, uses variables, performs arithmetic, and displays
-    results for the user to see. Because you should have learned how to
-    write this type of program in CSE&nbsp;110, this assignment should
-    have been fairly easy for you. If this assignment was difficult for
-    you, you should review the concepts from
-    <a href="https://byui-cse.github.io/cse110-course/index.html">CSE&nbsp;110</a>
-    and the programs that you wrote in that course.</p>
 
-    <h2>Submission</h2>
-    <p>When complete, report your progress in the associated I-Learn
-    quiz.</p>
-</article>
-<footer>
-    <small>Copyright &copy; 2020, Brigham Young University - Idaho. All
-    rights reserved.</small>
-</footer>
+        <h2>Validating input is a number and between a range, with JavaScript</h2>
+        <p>Enter a number between 1 and 35</p>
+        <input id="user_input">
+        <button type="button" onclick="myFunction()">Submit</button>
+        <p id="response"></p>
+
+        <h2>Customized error message example</h2>
+        <p>You cannot change these error messages with CSS. They also depend on browser locale.
+        </p>
+        <form>
+            <label for="mail">I would like you to provide me with an e-mail address:</label>
+            <input type="email" id="mail" name="mail">
+            <button>Submit</button>
+        </form>
+        <br><br>
+        <h1>Using Fetch</h1>
+        <p>Fetch API  provides a way to fetch resources asynchronously across the network.
+            This replaces the XMLHttpRequest.
+        </p>
+        <p>Differs from jQuery.ajax() because will only reject on network failure or if anything
+            prevented the request from completing. fetch() won't send cross-origin cookies.
+        </p>
+        <p>Simple fetch request looks like this.</p>
+        <div class="pre">
+            <p class="python">fetch('http://example.com/movies.json')<br>
+                   .then(response => response.json())<br>
+                   .then(data => console.log(data));</p>
+        </div>
+
+    </article>
+    <footer>
+        <small>Copyright &copy; 2020, Brigham Young University - Idaho. All
+            rights reserved.</small>
+    </footer>
+    <script>
+        function validateForm() {
+            let x = document.forms["myForm"]["fname"].value;
+            if (x == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+        }
+
+        function myFunction() {
+            let x = document.getElementById("user_input").value;
+            let answer;
+            if (isNaN(x) || x < 1 || x > 35) {
+                answer = "Input not valid";
+            } else {
+                answer = "Input is valid";
+            }
+            document.getElementById("response").innerHTML = answer;
+        }
+        const form = document.getElementsByTagName('form')[0];
+
+        const email = document.getElementById('mail');
+        const emailError = document.querySelector('#mail + span.error');
+
+        email.addEventListener('input', function (event) {
+            if (email.validity.valid) {
+                emailError.innerHTML = '';
+                emailError.className = 'error';
+            } else {
+                showError();
+            }
+        });
+
+        form.addEventListener('submit', function (event) {
+
+
+            if (!email.validity.valid) {
+                showError();
+                event.preventDefault();
+            }
+        });
+
+        function showError() {
+            if (email.validity.valueMissing) {
+                emailError.textContent = 'You need to enter an e-mail address.';
+            } else if (email.validity.typeMismatch) {
+                emailError.textContent = 'Entered value needs to be an e-mail address.';
+            } else if (email.validity.tooShort) {
+
+                emailError.textContent = `Email should be at least ${email.minLength} characters; you entered ${email.value.length}.`;
+            }
+
+            emailError.className = 'error active';
+        }
+    </script>
 </body>
+
 </html>
