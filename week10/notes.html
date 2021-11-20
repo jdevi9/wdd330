@@ -9,11 +9,6 @@
     <title>WDD 330 Week10 Notes</title>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
-    <script src="../site/url.js"></script>
-    <script src="../site/urlWrite.js"></script>
-    <script src="../site/color.js"></script>
-    <script src="../site/linenums.js"></script>
-    <script src="../site/hljs/highlight.min.js"></script>
     <link rel="icon" type="image/png" href="../site/icon.png">
     <link rel="stylesheet" type="text/css" href="../style.css">
     <link rel="stylesheet" type="text/css" href="../site/hljs/vscode.css">
@@ -189,6 +184,19 @@ that is actually needed. </pre>
                    .then(response => response.json())<br>
                    .then(data => console.log(data));</p>
         </div>
+        <p>The argument taken is the path to the resource you want to fetch. This then returns a 
+            promise that resolves with a Response object.
+        </p>
+        <p>The Response object does not contain the JSON but is a representation of the entire http
+            response. To extract the JSON body content we use the json() method, which returns a 
+            second promisethat returns the result of parsing the response body text as JSON.
+        </p>
+        <h2>Fetch Example</h2>
+        <p>Check the console to see that the Star Wars characters were pulled.</p>
+
+        <h2>Another Fetch Example</h2>
+        <h3>Authors</h3>
+        <ul id="authors"></ul>
 
     </article>
     <footer>
@@ -249,6 +257,38 @@ that is actually needed. </pre>
 
             emailError.className = 'error active';
         }
+
+        fetch("https://swapi.dev/api/people")
+            .then(response => response.json())
+            .then(data => console.log(data));
+
+        function createNode(element) {
+            return document.createElement(element);
+        }
+        function append(parent, el) {
+            return parent.appendChild(el);
+        }
+        const ul = document.getElementById("authors");
+        const url = 'https://randomuser.me/api/?results=10'
+
+        fetch(url)
+        .then((resp) => resp.json())
+        .then(function(data) {
+            let authors = data.results;
+            return authors.map(function(author){
+                let li = createNode("li");
+                let img = createNode("img");
+                let span = createNode("span");
+                img.src = author.picture.medium;
+                span.innerHTML = `${author.name.first} ${author.name.last}`;
+                append(li, img);
+                append(li, span);
+                append(ul, li);
+            })
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
     </script>
 </body>
 
