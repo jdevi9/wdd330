@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>REMIS</title>
+</head>
+
+<body>
+    <div id="header">
+        <img src="https://i.ibb.co/3BJwf3j/640px-USACE-logo.jpg" alt="USACE logo" width="100">
+        <h1>Real Estate Management Information System</h1>
+    </div>
+    <div id="tracts">
+        <h3>Tracts List</h3>
+        <ul id="tracts_list"></ul>
+        <input type="text" id="tractSearch" maxlength="8" size="10" placeholder="Enter tract #">
+    <button type="button" onclick="displayTractInformation()">Info</button>
+    <button type="button" onclick="createNewTract()">New</button>
+    </div>
+    <div id="intro">
+        <h2>Welcome to REMIS</h2>
+        <p>REMIS stands for the Real Estate Managment Information System.
+            It is a system to help the Realty Specialist stay on top of the various tracts 
+            of land that are part of their projects. 
+        </p>
+        <h2>Get Started</h2>
+        <ul>
+            <li>The left side list contains the tracts entered into the system
+                If you would like to see more information on specific tract type 
+                the tract number and click Info
+            </li><br>
+            <li>Looking at the tract information you can see a checklist of 
+                steps for the acquisition. 
+            </li><br>
+            <li>Clicking each step will mark it as complete, clicking again will mark
+                it incomplete
+            </li><br>
+            <li>Click save to save the information to your Local Storage</li><br>
+            <li>Click on the New button to create a new tract</li><br>
+            <li>Click save after entering the information to save the tract to 
+                local storage and to add it to the tract list
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="tractPlayArea">
+    <div id="tractInformation">
+        <h4>Tract Information</h4> <!-- have to hid this on default-->
+        <ul id="tractInformationList">
+            <li id="tNum"></li>
+            <li id="pNum"></li>
+            <li id="oName"></li>
+            <li id="oAddress"></li>
+            <li id="oPhoneNum"></li>
+        </ul>
+        <h4>Progress Check List</h4>
+        <ul id="tractProgressCheckList">
+           <button id="titleButton" onclick="titleCheck()"><li id="title">Title Search</li></button><br>
+           <button id="appraisalButton" onclick="appraisalCheck()"><li id="appraisal">Appraisal</li></button><br>
+           <button id="surveyButton" onclick="surveyCheck()"><li id="survey">Survey</li></button><br>
+           <button id="negotiationsButton" onclick="negotiationsCheck()"><li id="negotiations">Negotiations</li></button><br>
+           <button id="escrowButton" onclick="escrowCheck()"><li id="escrow">Escrow</li></button><br>
+           <button id="fReviewButton" onclick="fReviewCheck()"><li id="fReview">Final Review</li></button><br>
+        </ul>
+        <button onclick="saveTracts()">Save Progress</button>
+    </div>
+    <div id="addTractForm">
+        <h2>Create New Tract</h2>
+        <p>Input the information to create add a new tract to list. Please 
+            fill out all of the information possible.
+        </p>
+        <h2>Information</h2>
+        <ul>
+            <li>Tract Number is the tract number assigned by GIS</li>
+            <li>Owner Name is the full name of the current landowner</li>
+            <li>Owner Address is the current mailing address for the landowner</li>
+            <li>APN is the Acessor's Parcel Number for the property being acquired</li>
+            <li>Owner Phone Number is the best phone number to reach the landowner</li>
+        </ul>
+    </div>
+    
+    </div>
+    <div id="news">
+        <img src="https://i.ibb.co/y849LKt/bbc-red.jpg" alt="bbc-red">
+    <h2>Top Headlines Today</h2>
+    <table id="newsAPI">
+        
+    </table>
+    </div>
+</body>
+<script src="localStorage.js" defer></script>
+<script src="main.js" defer></script>
+
+
+</html>

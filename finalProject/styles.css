@@ -1,0 +1,277 @@
+body {
+    max-width: 1000px;
+    margin: auto;
+}
+
+html {
+    background-image: url("https://i.ibb.co/VqKYh4V/a43c2b4738c67b467a552134e00ca6cd.gif");
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: .75;
+}
+
+#header {
+    background-color: white;
+    padding: 5px;
+    border: solid black;
+    width: 952px;
+}
+
+#header img {
+    float: left;
+    padding-right: 20px;
+}
+
+#header h1 {
+    padding-top: 5px;
+}
+
+#tracts {
+    display: inline;
+    float: left;
+    border: solid black;
+    background-color: lightblue;
+    height: 678px;
+    padding: 10px;
+}
+
+#tracts h3 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+#tracts li {
+    list-style: square;
+    font-size: 18px;
+}
+
+#intro {
+    background-color: wheat;
+    display: inline;
+    float: left;
+    width: 600px;
+    border: solid black;
+    padding-bottom: 70px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+#intro h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Verdana,sans-serif;
+    color: red;
+
+}
+#intro p {
+    text-align: center;
+    font-size: 20px;
+    font-family: Verdana,sans-serif;
+}
+
+#intro li {
+    font-size: 20px;
+    font-family: Verdana, sans-serif;
+}
+
+#tractInformation {
+    background-color: wheat;
+    display: none;
+    float: left;
+    width: 643px;
+    border: solid black;
+    padding-bottom: 70px;
+    padding-left: 30px;
+    padding-right: 70px;
+    height: 628px;
+
+}
+
+#tractInformation h4 {
+    color: red;
+    font-family: Verdana,sans-serif;
+}
+
+#tractInformation li {
+    list-style: none;
+}
+
+#saveChanges {
+    display: block;
+}
+
+/* This is for the checklist display */
+#tractProgressCheckList {
+    width: 200px;
+}
+#tractProgressCheckList li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#tractProgressCheckList li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+#tractProgressCheckList li:hover {
+    background: #ddd;
+}
+
+#tractProgressCheckList li.checked {
+    background: #888;
+    color: #fff;
+}
+
+#tractProgressCheckList li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
+#titleButton {
+    width: 100%;
+    border: none;
+    background-color: #ddd;
+    text-align: left;
+}
+
+#appraisalButton {
+    width: 100%;
+    border: none;
+    background-color: #ddd;
+    text-align: left;
+}
+
+#surveyButton {
+    width: 100%;
+    border: none;
+    background-color: #ddd;
+    text-align: left;
+}
+
+#negotiationsButton {
+    width: 100%;
+    border: none;
+    background-color: #ddd;
+    text-align: left;
+}
+
+#escrowButton {
+    width: 100%;
+    border: none;
+    background-color: #ddd;
+    text-align: left;
+}
+
+#fReviewButton {
+    width: 100%;
+    border: none;
+    background-color: #ddd;
+    text-align: left;
+}
+
+#addTractForm {
+    background-color: wheat;
+    display: none;
+    float: left;
+    width: 600px;
+    border: solid black;
+    padding-bottom: 70px;
+    padding-left: 70px;
+    padding-right: 70px;
+    height: 628px;
+}
+
+#addTractForm h2 {
+    text-align: center;
+    color: red;
+    font-family: Verdana,sans-serif;
+
+}
+
+#addTractForm p {
+    text-align: center;
+    font-family: Verdana,sans-serif;
+    font-size: 20px;
+}
+
+#addTractForm form {
+    text-align: center;
+}
+
+#addTractForm ul {
+    list-style-type: "→";
+}
+
+#saveButton {
+    display: block;
+    margin: auto;
+    width: 29.5%;
+}
+
+#buttonBar {
+    display: none;
+}
+
+
+#newsAPI {
+    background-color: rgba(235, 232, 232, 0.25);
+    
+}
+
+#newsAPI td {
+    font-size: 30px;
+    padding: 10px;
+    border-bottom: black solid;
+}
+
+#newsAPI td:hover {
+    color: red;
+}
+
+
+#news {
+    background-color: rgba(235, 232, 232, 0.75);
+    display: inline;
+    float: left; 
+    width: 925px;
+    padding: 20px;
+    border: black solid;
+
+}
+
+#news img {
+    height: 143px;
+    width: 188px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+}
+
+
+#news h2 {
+    text-align: center;
+    font-size: 40px;
+}
+

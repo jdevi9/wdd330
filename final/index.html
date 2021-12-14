@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REMIS</title>
+</head>
+
+<body>
+    <div id="header">
+        <img src="https://i.ibb.co/3BJwf3j/640px-USACE-logo.jpg" alt="USACE logo" width="100">
+        <h1>Real Estate Management Information System</h1>
+    </div>
+    <div id="tract_list">
+        <h3>Tract List</h3>
+        <ol id="tractList">
+
+        </ol>
+    </div>
+    <div id="addTract">
+        <input type="text" id="tractInput" placeholder="tract...">
+        <span onclick="newTract()" class="addBtn">Add</span>
+    </div>
+    <div id="tract_information">
+        <h3>Tract Information</h3>
+        
+    </div>
+    <div id="check_list">
+        <h3>Checklist</h3>
+        <ul id="checkList"></ul>
+    </div>
+    <div id="button_bar">
+        <input class="tab" type="button" id="edit" value="Edit">
+        <button type="button" id="new_tract" onclick="createNewTract()">New Tract</button>
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>
